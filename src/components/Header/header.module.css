@@ -42,7 +42,12 @@
   min-width: 100px;
 
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-  @include noselect();
+
+  &:hover,
+  &:focus {
+    background-color: orange;
+    border: 1px solid #fe5f1e;
+  }
 }
 .span {
   color: #ffffff;

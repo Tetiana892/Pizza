@@ -1,5 +1,6 @@
 import css from './header.module.css';
 import logoSvg from '../../images/pizza-logo.svg';
+import Button from 'components/Button/Button';
 
 export default function Header() {
   return (
@@ -13,7 +14,7 @@ export default function Header() {
           </div>
         </div>
         <div className={css.cart}>
-          <a href="/cart.html" className={css.button}>
+          <Button>
             <span className={css.span}>52 $</span>
             <div className={css.delimiter}></div>
             <svg
@@ -47,7 +48,7 @@ export default function Header() {
               />
             </svg>
             <span className={css.span}>3</span>
-          </a>
+          </Button>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import css from './header.module.css';
 import logoSvg from '../../images/pizza-logo.svg';
-import Button from 'components/Button/Button';
+import Button from 'components/Button/button';
 
 export default function Header() {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import css from './app.module.css';
-import Header from '../Header/header';
+import { Header, Categories } from 'components';
 
 const App = () => {
   return (
@@ -10,16 +10,10 @@ const App = () => {
       <div className={css.content}>
         <div className={css.container}>
           <div className={css.contenttop}>
-            <div className={css.categories}>
-              <ul style={{ display: 'flex' }}>
-                <li className={css.liactive}>All</li>
-                <li className={css.categoriesactive}>Meat</li>
-                <li className={css.categoriesactive}>Vegetarian</li>
-                <li className={css.categoriesactive}>Grill</li>
-                <li className={css.categoriesactive}>Sharp</li>
-                <li className={css.categoriesactive}>Closed</li>
-              </ul>
-            </div>
+            <Categories
+              onClickItem={name => console.log(name)}
+              items={['Meat', 'Vegetarian', 'Grill', 'Sharp', 'Closed']}
+            />
             <div className={css.sort}>
               <div className={css.sortlabel}>
                 <svg

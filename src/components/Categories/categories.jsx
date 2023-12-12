@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import css from './categories.module.css';
 
-export default function Categories({ items, onClickItem }) {
+export default function Categories({ items }) {
   const [activeItem, setActiveItem] = useState(null);
+
   const onSelectItem = index => {
     setActiveItem(index);
   };

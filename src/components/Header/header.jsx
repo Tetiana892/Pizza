@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import css from './header.module.css';
-import logoSvg from '../../images/pizza-logo.svg';
+import logoSvg from '../../assets/images/pizza-logo.svg';
 import Button from 'components/Button/button';
 
 export default function Header() {

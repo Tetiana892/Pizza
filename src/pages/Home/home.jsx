@@ -1,9 +1,23 @@
-import React from 'react';
-import { Categories, SortPopup, PizzaBlock } from 'components';
+import React, { useEffect, useState } from 'react';
+import { Categories, SortPopup, PizzaBlock, Skeleton } from 'components';
 import css from './home.module.css';
-import pizzas from '../../assets/pizza.json';
+// import pizzas from '../../assets/pizza.json';
 
 function Home() {
+  const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(' https://6579c90f1acd268f9afa0d45.mockapi.io/items')
+      .then(res => {
+        return res.json();
+      })
+      .then(arr => {
+        setItems(arr);
+        setIsLoading(false);
+      });
+  }, []);
+
   return (
     <div className={css.container}>
       <div className={css.contenttop}>
@@ -15,9 +29,9 @@ function Home() {
       </div>
       <h2 className={css.contenttitle}>All Pizzas</h2>
       <div className={css.contentitems}>
-        {pizzas.map(obj => (
-          <PizzaBlock {...obj} />
-        ))}
+        {isLoading
+          ? [...new Array(8)].map((_, index) => <Skeleton key={index} />)
+          : items.map(obj => <PizzaBlock key={obj.id} {...obj} />)}
       </div>
     </div>
   );

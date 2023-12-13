@@ -20,6 +20,7 @@ function PizzaBlock({ title, price, imageUrl, sizes, types }) {
         <ul className={css.choice}>
           {types.map((type, i) => (
             <li
+              key={type}
               onClick={() => setActiveType(type)}
               className={
                 activeType === i ? css.choicelistactive : css.choicelist
@@ -32,6 +33,7 @@ function PizzaBlock({ title, price, imageUrl, sizes, types }) {
         <ul className={css.choice}>
           {sizes.map((size, i) => (
             <li
+              key={size}
               onClick={() => setActiveSize(i)}
               className={
                 activeSize === i ? css.choicelistactive : css.choicelist
